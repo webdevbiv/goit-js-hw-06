@@ -14,12 +14,19 @@ console.log(listRef);
 // listRef.innerHTML = listItems
 function newList() {
   const listArray = []
-  ingredients.forEach(ingredient => {
+  ingredients.map((ingredient) => {
     const newItem = document.createElement('li')
     newItem.classList.add('item')
     newItem.innerText = ingredient
     listArray.push(newItem)
-  });
+  })
+  // ingredients.forEach(ingredient => {
+  //   const newItem = document.createElement('li')
+  //   newItem.classList.add('item')
+  //   newItem.innerText = ingredient
+  //   listArray.push(newItem)
+  // });
+
   console.log(listArray);
   listRef.append(...listArray)
 }
