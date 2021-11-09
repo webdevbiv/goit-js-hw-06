@@ -1,14 +1,15 @@
-function generateListData() {
-    const listRef = document.querySelectorAll('h2')
-    // console.log(`Number of categories: ${listRef.length}`);
-    const listItemsRef = document.querySelectorAll('.item')
-    // console.log(listItemsRef);
-    listItemsRef.forEach(element => {
-        const categoriesTitle = element.querySelector('h2')
-        const categoriesItems = element.querySelectorAll('li')
-        // console.log(categoriesTitle.innerText, categoriesItems.length);
-        console.log(`Category: ${categoriesTitle.innerText}\nElements: ${categoriesItems.length}`);
+function listDataRef() {
+    const categoriesRef = document.querySelectorAll('h2')
+    console.log(`Number of categories: ${categoriesRef.length}`);
+    // console.dir(categoriesRef)
+    const itemsRef = document.querySelectorAll('.item')
+    console.log(itemsRef);
+    itemsRef.forEach(item => {
+        const category = item.querySelector('h2')
+        // console.dir(category)
+        const list = item.querySelectorAll('li')
+        console.log(`Category: ${category.innerText}\nElements: ${list.length}`);
     });
 }
 
-generateListData()
+listDataRef()
