@@ -7,15 +7,31 @@ console.log(refs.inputUser.dataset.length);
 console.log(refs.inputLength);
 
 refs.inputUser.addEventListener('blur', inputValidation)
+
+// function inputValidationLength() {
+//     event.target.value.length === refs.inputLength ?
+//         refs.inputUser.classList.remove('invalid') & refs.inputUser.classList.add('valid') :
+//         refs.inputUser.classList.add('invalid')
+// }
+
+function changeClass(classAdd, classRemove) {
+    refs.inputUser.classList.add(`${classAdd}`)
+    refs.inputUser.classList.remove(`${classRemove}`)
+}
+
+
 function inputValidation(event) {
-    console.log(event.target.value.length);
     if (event.target.value.length === refs.inputLength) {
-        refs.inputUser.classList.add('valid')
-        refs.inputUser.classList.remove('invalid')
         console.log('true');
+        changeClass('valid', 'invalid')
     }
     else {
-        refs.inputUser.classList.add('invalid')
+        changeClass('invalid')
     }
 
+
+    // inputValidationLength()
+    // event.target.value.length === refs.inputLength ?
+    //     refs.inputUser.classList.remove('invalid') & refs.inputUser.classList.add('valid') :
+    //     refs.inputUser.classList.add('invalid')
 }
